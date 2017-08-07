@@ -4,7 +4,6 @@ kind: Service
 metadata:
   name: sd-redis
   labels:
-    name: redis
     app: sd-redis
 spec:
   ports:
@@ -12,22 +11,21 @@ spec:
     name: master
   clusterIP: None
   selector:
-    name: redis
+    name: sd-redis-master
 ---
+# Kubernetes >= 1.6
 apiVersion: apps/v1beta1
 kind: StatefulSet
 metadata:
-  name: redis
+  name: sd-redis-master
 spec:
   serviceName: "sd-redis"
   replicas: 1
   template:
     metadata:
       labels:
+        name: sd-redis-master
         app: sd-redis
-        name: redis
-        role: master
-      name: redis
     spec:
       initContainers:
         - name: config-setter
