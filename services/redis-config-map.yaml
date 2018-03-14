@@ -831,9 +831,9 @@ data:
     aof-rewrite-incremental-fsync yes
 kind: ConfigMap
 metadata:
-  creationTimestamp: 2017-08-09T23:23:31Z
+  creationTimestamp: 2018-03-09T23:23:31Z
   name: sd-redis-master-conf
-  namespace: cd-screwdriver-k8s
+  namespace: your-sd-name-space
   resourceVersion: "100814409"
-  selfLink: /api/v1/namespaces/cd-screwdriver-k8s/configmaps/sd-redis-master-conf
+  selfLink: /api/v1/namespaces/your-sd-name-space/configmaps/sd-redis-master-conf
   uid: c1ecf488-7d59-11e7-ac0e-d8d385e4b746
